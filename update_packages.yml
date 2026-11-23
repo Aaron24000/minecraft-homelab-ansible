@@ -1,0 +1,11 @@
+---
+- name: Refresh Ubuntu package lists
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Update APT package cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600

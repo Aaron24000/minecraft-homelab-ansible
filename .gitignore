@@ -1,0 +1,21 @@
+# Private Ansible inventory
+inventory.ini
+
+# SSH keys and credentials
+id_ed25519*
+*.pem
+*.key
+.env
+*.vault_password
+vault-pass.txt
+
+# Ansible temporary files
+*.retry
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor temporary files
+*.swp
+*.swo

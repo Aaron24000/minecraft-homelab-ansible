@@ -1,0 +1,14 @@
+---
+- name: Check homelab package updates
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Check available package updates
+      ansible.builtin.command: apt list --upgradable
+      register: available_updates
+      changed_when: false
+
+    - name: Display available updates
+      ansible.builtin.debug:
+        var: available_updates.stdout_lines

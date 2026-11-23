@@ -1,0 +1,15 @@
+---
+- name: Gather homelab system information
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Display system information
+      ansible.builtin.debug:
+        msg:
+          - "Hostname: {{ inventory_hostname }}"
+          - "OS: {{ ansible_facts['distribution'] }}"
+          - "Version: {{ ansible_facts['distribution_version'] }}"
+          - "Kernel: {{ ansible_facts['kernel'] }}"
+          - "CPU cores: {{ ansible_facts['processor_vcpus'] }}"
+          - "RAM: {{ ansible_facts['memtotal_mb'] }} MB"
